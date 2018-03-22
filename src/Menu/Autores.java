@@ -77,7 +77,7 @@ public class Autores extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         jLabel3.setText("-Michael Jonnathan Perez Pin.");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 480, 40));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 480, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fonpeque.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 530));
