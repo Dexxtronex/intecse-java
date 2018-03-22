@@ -7,6 +7,7 @@ package Menu;
 import Clases.Codigo;
 import java.applet.AudioClip;
 import Clases.Control;
+import Cotizacion.Comprobante;
 import Cotizacion.Sistema_Comprobante;
 import Jdbc.Conexion_cat;
 import java.sql.ResultSet;
@@ -118,6 +119,7 @@ public class Menu_Admin extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
         jMenu18 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -271,6 +273,15 @@ public class Menu_Admin extends javax.swing.JFrame {
             }
         });
         jMenu13.add(jMenuItem10);
+
+        jMenuItem17.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, 0));
+        jMenuItem17.setText("Cotizacion");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
+        jMenu13.add(jMenuItem17);
 
         jMenuBar1.add(jMenu13);
 
@@ -458,6 +469,12 @@ ob.setVisible(true);
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+       Comprobante ob = new Comprobante();
+ob.setVisible(true);       
+// TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -512,6 +529,7 @@ ob.setVisible(true);
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

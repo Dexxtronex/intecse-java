@@ -60,7 +60,7 @@ public class factura_comprobante extends javax.swing.JFrame {
        modelo.addColumn("TOTAL");
        try
        {
-           PreparedStatement pst = link.prepareStatement("SELECT * FROM Facturas");
+           PreparedStatement pst = link.prepareStatement("SELECT * FROM facturas");
            ResultSet rs = pst.executeQuery();
            while(rs.next())
            {
@@ -226,7 +226,7 @@ public class factura_comprobante extends javax.swing.JFrame {
             modelo.addColumn("TOTAL");
             try
             {
-                PreparedStatement pst = link.prepareStatement("SELECT * FROM Facturas WHERE Fecha LIKE '%/"+recogedor+"/%'");
+                PreparedStatement pst = link.prepareStatement("SELECT * FROM facturas WHERE Fecha LIKE '%/"+recogedor+"/%'");
                 ResultSet rs = pst.executeQuery();
                 while(rs.next())
                 {

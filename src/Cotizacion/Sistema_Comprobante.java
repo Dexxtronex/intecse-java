@@ -38,7 +38,7 @@ public class Sistema_Comprobante extends javax.swing.JFrame {
         Conexion co = new Conexion();
         Connection link = co.Conec();
         String factura = lblFact.getText();
-        int ced = Integer.parseInt(txtCi.getText());
+        
         String fecha = txtFecha.getText();
         String Hora = txtHora.getText();
         float subtotal = Float.parseFloat(txtSubtotal.getText());
@@ -47,7 +47,7 @@ public class Sistema_Comprobante extends javax.swing.JFrame {
         try {
             PreparedStatement pst = link.prepareStatement("INSERT INTO comprobante(Num_Fac,CI,Fecha,Hora,Subtotal,Iva,Total) VALUES (?,?,?,?,?,?,?) ");
             pst.setString(1, factura);
-            pst.setInt(2, ced);
+            pst.setString(2, txtCi.getText());
             pst.setString(3, fecha);
             pst.setString(4, Hora);
             pst.setFloat(5, subtotal);
