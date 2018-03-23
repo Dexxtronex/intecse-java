@@ -54,8 +54,35 @@ public class New_Mercaderia extends javax.swing.JFrame {
         JLabel fondo= new JLabel(); 
         getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER); 
         fondo.setBounds(0,0,uno.getIconWidth(),u­no.getIconHeight());
+        Cargar();
     }
+    public void Cargar(){
+       txtCanti.setEnabled(false);
+       txtCantiMini.setEnabled(false);
+       txtCompra.setEnabled(false);
+       txtDia_lle.setEnabled(false);
+       txtHora_lle.setEnabled(false);
+       txtPre_uni.setEnabled(false);
+       txtPrecioMayor.setEnabled(false);
+       txtPrecioTar.setEnabled(false);
+       CmbCat.setEnabled(false);
+       CmbM.setEnabled(false);
+       CmbPorcTC1.setEnabled(false);
+       CmbPro1.setEnabled(false);
+       tare_desc.setEnabled(false);
 
+        CmbV.setEnabled(false);
+        btnSave.setEnabled(false);
+        btnFechaHora.setEnabled(false);
+    }
+    public int Datos(){
+        int verdad = 0;
+        if((txtCanti.getText().equals("")) ||(txtCanti.getText().equals("")) || (txtCantiMini.getText().equals(""))|| (txtCompra.getText().equals(""))|| (txtDia_lle.getText().equals(""))|| ( txtHora_lle.getText().equals(""))|| (txtPre_uni.getText().equals(""))|| (txtPrecioMayor.getText().equals("")) ){
+            verdad = 1;
+        }
+        return verdad;
+
+    }
     public New_Mercaderia(String tabla, String seleccionado)  {
         initComponents();
         setLocationRelativeTo(null);
@@ -269,8 +296,6 @@ public class New_Mercaderia extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         txtCompra = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tare_desc = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         txtPre_uni = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -297,6 +322,7 @@ public class New_Mercaderia extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         txtCantiMini = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
+        tare_desc = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         btnSave = new javax.swing.JButton();
         btnEli = new javax.swing.JButton();
@@ -325,19 +351,19 @@ public class New_Mercaderia extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 340, 42));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel2.setText("Codigo");
+        jLabel2.setText("CÓDIGO");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 56, 15));
 
         txtCod.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         getContentPane().add(txtCod, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 250, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel3.setText("Nombre del Producto");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 121, -1));
+        jLabel3.setText("NOMBRE DE PRODUCTO:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel5.setText("Cantidad");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 74, -1));
+        jLabel5.setText("CANTIDAD:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 140, 100, -1));
 
         txtCanti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,11 +382,16 @@ public class New_Mercaderia extends javax.swing.JFrame {
                 txtNom_ProActionPerformed(evt);
             }
         });
+        txtNom_Pro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNom_ProKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtNom_Pro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 250, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel4.setText("Proveedor");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 74, 30));
+        jLabel4.setText("PROVEEDOR:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 200, 100, 30));
 
         CmbV.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "…", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120", "130", "140", "150", "160", "170", "180", "190", "200" }));
         CmbV.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -376,14 +407,14 @@ public class New_Mercaderia extends javax.swing.JFrame {
         getContentPane().add(CmbV, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 70, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel6.setText("Descripcion del Producto");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 156, -1));
+        jLabel6.setText("DESCRIPCIÓN DEL PRODUCTO");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 220, -1));
 
         jLabel16.setText("$");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel17.setText("Precio Compra");
+        jLabel17.setText("PRECIO COMPRA");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 108, -1));
 
         txtCompra.addActionListener(new java.awt.event.ActionListener() {
@@ -393,19 +424,8 @@ public class New_Mercaderia extends javax.swing.JFrame {
         });
         getContentPane().add(txtCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 120, -1));
 
-        tare_desc.setColumns(20);
-        tare_desc.setRows(5);
-        tare_desc.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tare_descKeyPressed(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tare_desc);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 410, 40));
-
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel7.setText("Precio Venta");
+        jLabel7.setText("PRECIO VENTA");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 108, -1));
 
         txtPre_uni.addActionListener(new java.awt.event.ActionListener() {
@@ -416,19 +436,19 @@ public class New_Mercaderia extends javax.swing.JFrame {
         getContentPane().add(txtPre_uni, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 120, -1));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel9.setText("Hora de Llegada");
+        jLabel9.setText("HORA DE LLEGADA");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 119, -1));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel10.setText("Dia de llegada");
+        jLabel10.setText("DÍA DE LLEGADA");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 119, -1));
 
         jLabel18.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel18.setText("Precio Tarjeta Credito");
+        jLabel18.setText("PRECIO TARJETA CREDITO");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 130, -1));
 
         jLabel19.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel19.setText("Precio Por Mayor");
+        jLabel19.setText("PRECIO POR MAYOR");
         getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 108, -1));
 
         txtPrecioMayor.addActionListener(new java.awt.event.ActionListener() {
@@ -467,8 +487,8 @@ public class New_Mercaderia extends javax.swing.JFrame {
         getContentPane().add(txtHora_lle, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 260, -1));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel11.setText("Categoria");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        jLabel11.setText("CATEGORIA:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 240, 100, -1));
 
         CmbCat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "...." }));
         CmbCat.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -537,10 +557,10 @@ public class New_Mercaderia extends javax.swing.JFrame {
         jLabel22.setText("$");
         getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
 
-        jLabel25.setText("hora:minuto:segundo   00:00:00");
+        jLabel25.setText("H:M:S      00:00:00");
         getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, -1, -1));
 
-        jLabel26.setText("dia/mes/año         00/00/0000");
+        jLabel26.setText("DÍA/MES/AÑO    00/00/0000");
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, -1, -1));
 
         txtCantiMini.addActionListener(new java.awt.event.ActionListener() {
@@ -556,13 +576,20 @@ public class New_Mercaderia extends javax.swing.JFrame {
         getContentPane().add(txtCantiMini, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 250, -1));
 
         jLabel27.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel27.setText("Cantidad Minima");
-        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 100, -1));
+        jLabel27.setText("CANTIDAD MÍNIMA:");
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 185, 130, 10));
+
+        tare_desc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tare_descActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tare_desc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 410, 30));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/save me.png"))); // NOI18N
-        btnSave.setText("Guardar");
+        btnSave.setText("GUARDAR");
         btnSave.setBorderPainted(false);
         btnSave.setContentAreaFilled(false);
         btnSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -581,7 +608,7 @@ public class New_Mercaderia extends javax.swing.JFrame {
         });
 
         btnEli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/recycle-full me.png"))); // NOI18N
-        btnEli.setText("Eliminar");
+        btnEli.setText("ELIMINAR");
         btnEli.setBorderPainted(false);
         btnEli.setContentAreaFilled(false);
         btnEli.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -595,7 +622,7 @@ public class New_Mercaderia extends javax.swing.JFrame {
         });
 
         btnMod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/configuration me.png"))); // NOI18N
-        btnMod.setText("Modificar");
+        btnMod.setText("MODIFICAR");
         btnMod.setBorderPainted(false);
         btnMod.setContentAreaFilled(false);
         btnMod.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -609,7 +636,7 @@ public class New_Mercaderia extends javax.swing.JFrame {
         });
 
         btnFechaHora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/calendar me.png"))); // NOI18N
-        btnFechaHora.setText("Asignar Tiempo");
+        btnFechaHora.setText("ASIGNAR TIEMPO");
         btnFechaHora.setBorderPainted(false);
         btnFechaHora.setContentAreaFilled(false);
         btnFechaHora.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -623,7 +650,7 @@ public class New_Mercaderia extends javax.swing.JFrame {
         });
 
         btnCan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btnCan.setText("Cancelar");
+        btnCan.setText("SALIR");
         btnCan.setBorderPainted(false);
         btnCan.setContentAreaFilled(false);
         btnCan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -688,11 +715,22 @@ public class New_Mercaderia extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtDia_lleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDia_lleActionPerformed
-        // TODO add your handling code here:
+
+txtDia_lle.setEnabled(false);
+        txtHora_lle.setEnabled(true);
+        txtHora_lle.requestFocus();
+
+        
     }//GEN-LAST:event_txtDia_lleActionPerformed
 
     private void txtHora_lleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHora_lleActionPerformed
-        // TODO add your handling code here:
+
+
+txtHora_lle.setEnabled(false);
+        jLabel14.setEnabled(true);
+        jLabel14.requestFocus();
+        
+        btnSave.setEnabled(true);
     }//GEN-LAST:event_txtHora_lleActionPerformed
 
     private void btnCanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanActionPerformed
@@ -705,11 +743,21 @@ public class New_Mercaderia extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFechaHoraActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        try {
+      if( Datos()==0){
+           try {
             Mercaderia(CmbCat.getSelectedItem().toString());
         } catch (FileNotFoundException ex) {
             Logger.getLogger(New_Mercaderia.class.getName()).log(Level.SEVERE, null, ex);
         }
+      }else
+      {
+          JOptionPane.showMessageDialog(rootPane, "LLENE TODOS LOS CAMPOS");
+      }
+        
+       
+        
+        
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void CmbVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CmbVMouseClicked
@@ -721,12 +769,18 @@ public class New_Mercaderia extends javax.swing.JFrame {
     }//GEN-LAST:event_CmbCatMouseEntered
 
     private void CmbCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbCatActionPerformed
-        // TODO add your handling code here:
+CmbCat.transferFocus();
+         CmbCat.transferFocus();
+        CmbCat.setEnabled(false);
+        tare_desc.setEnabled(true);
+        tare_desc.requestFocus();
+
+
     }//GEN-LAST:event_CmbCatActionPerformed
 
     private void txtCantiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantiKeyTyped
       char c = evt.getKeyChar();
- int numerocaracteres = 10;
+ int numerocaracteres = 5;
  if((c<'0'||c>'9'))
         {          
 
@@ -740,15 +794,20 @@ public class New_Mercaderia extends javax.swing.JFrame {
 
     private void txtNom_ProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNom_ProActionPerformed
         txtNom_Pro.transferFocus();
+        txtNom_Pro.setEnabled(false);
+   txtNom_Pro.setText(txtNom_Pro.getText().toUpperCase());
+        txtCanti.setEnabled(true);
+        txtCanti.requestFocus();
     }//GEN-LAST:event_txtNom_ProActionPerformed
 
     private void txtCantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantiActionPerformed
         txtCanti.transferFocus();
+         txtCanti.transferFocus();
+        txtCanti.setEnabled(false);
+   txtCanti.setText(txtCanti.getText().toUpperCase());
+        txtCantiMini.setEnabled(true);
+        txtCantiMini.requestFocus();
     }//GEN-LAST:event_txtCantiActionPerformed
-
-    private void tare_descKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tare_descKeyPressed
-
-    }//GEN-LAST:event_tare_descKeyPressed
 
     private void txtPre_uniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPre_uniActionPerformed
         txtPre_uni.transferFocus();
@@ -764,18 +823,26 @@ public class New_Mercaderia extends javax.swing.JFrame {
       
      
     private void CmbVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbVActionPerformed
-        // TODO add your handling code here:
+
+        cargarPrecioVenta();
+  CmbV.setEnabled(false);
+       CmbM.setEnabled(true);
+        CmbM.requestFocus();
+
+
+
     }//GEN-LAST:event_CmbVActionPerformed
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        JFileChooser archivo=new      JFileChooser();
+       JFileChooser archivo= new JFileChooser();
         int ventana=archivo.showOpenDialog(null);
         if(ventana==JFileChooser.APPROVE_OPTION){
             File file=archivo.getSelectedFile();
-            jTextField2.setText(String.valueOf(file));
-            Image foto=getToolkit().getImage(jTextField2.getText());
+            jLabel20.setText(String.valueOf(file));
+            Image foto=getToolkit().getImage(jLabel20.getText());
             jLabel14.setIcon(new ImageIcon(foto));
         }
+        
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -841,10 +908,11 @@ public class New_Mercaderia extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModActionPerformed
 
     private void txtCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCompraActionPerformed
- 
-cargarPrecioVenta();
-cargarPrecioMayor();
-CargarPrecioTarjetaCredito();
+ txtCompra.transferFocus();
+         txtCompra.transferFocus();
+        txtCompra.setEnabled(false);
+        CmbV.setEnabled(true);
+        CmbV.requestFocus();
 
 
 
@@ -867,6 +935,12 @@ CargarPrecioTarjetaCredito();
     }//GEN-LAST:event_CmbPro1MouseClicked
 
     private void CmbPro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbPro1ActionPerformed
+CmbPro1.transferFocus();
+         CmbPro1.transferFocus();
+        CmbPro1.setEnabled(false);
+        CmbCat.setEnabled(true);
+        CmbCat.requestFocus();
+
         // TODO add your handling code here:
     }//GEN-LAST:event_CmbPro1ActionPerformed
 
@@ -875,7 +949,12 @@ CargarPrecioTarjetaCredito();
     }//GEN-LAST:event_CmbPorcTC1MouseClicked
 
     private void CmbPorcTC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbPorcTC1ActionPerformed
-        // TODO add your handling code here:
+ CargarPrecioTarjetaCredito();
+      CmbPorcTC1.setEnabled(false);
+        txtDia_lle.setEnabled(true);
+        txtDia_lle.requestFocus();
+        btnFechaHora.setEnabled(true);
+
     }//GEN-LAST:event_CmbPorcTC1ActionPerformed
 
     private void CmbMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CmbMMouseClicked
@@ -883,16 +962,59 @@ CargarPrecioTarjetaCredito();
     }//GEN-LAST:event_CmbMMouseClicked
 
     private void CmbMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbMActionPerformed
-        // TODO add your handling code here:
+CmbM.setEnabled(false);
+        CmbPorcTC1.setEnabled(true);
+        CmbPorcTC1.requestFocus();
+
+cargarPrecioMayor();
     }//GEN-LAST:event_CmbMActionPerformed
 
     private void txtCantiMiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantiMiniActionPerformed
-        // TODO add your handling code here:
+ txtCantiMini.transferFocus();
+         txtCantiMini.transferFocus();
+        txtCantiMini.setEnabled(false);
+        CmbPro1.setEnabled(true);
+        CmbPro1.requestFocus();
+
+
     }//GEN-LAST:event_txtCantiMiniActionPerformed
 
     private void txtCantiMiniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantiMiniKeyTyped
-        // TODO add your handling code here:
+ char c = evt.getKeyChar();
+ int numerocaracteres = 5;
+ if((c<'0'||c>'9'))
+        {          
+
+            evt.consume();
+
+        } 
+ if(txtCanti.getText().length()>= numerocaracteres){
+    evt.consume(); 
+ }
+
+
     }//GEN-LAST:event_txtCantiMiniKeyTyped
+
+    private void txtNom_ProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNom_ProKeyTyped
+   char c = evt.getKeyChar();
+ int numerocaracteres = 50;
+ 
+ if(txtCanti.getText().length()>= numerocaracteres){
+    evt.consume(); 
+ }    // TODO add your handling code here:
+    }//GEN-LAST:event_txtNom_ProKeyTyped
+
+    private void tare_descActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tare_descActionPerformed
+ tare_desc.transferFocus();
+         tare_desc.transferFocus();
+            tare_desc.setText(tare_desc.getText().toUpperCase());
+
+        tare_desc.setEnabled(false);
+        txtCompra.setEnabled(true);
+        txtCompra.requestFocus();
+
+
+    }//GEN-LAST:event_tare_descActionPerformed
        
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -966,9 +1088,8 @@ CargarPrecioTarjetaCredito();
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
-    public javax.swing.JTextArea tare_desc;
+    public javax.swing.JTextField tare_desc;
     public javax.swing.JTextField txtCanti;
     public javax.swing.JTextField txtCantiMini;
     public javax.swing.JTextField txtCod;

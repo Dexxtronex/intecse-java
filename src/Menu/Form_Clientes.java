@@ -36,7 +36,22 @@ public class Form_Clientes extends javax.swing.JFrame {
         JLabel fondo= new JLabel(); 
         getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER); 
         fondo.setBounds(0,0,uno.getIconWidth(),u­no.getIconHeight());
-      
+        Cargar();
+    }
+    public void Cargar(){
+        txtApe.setEnabled(false);
+        txtTel.setEnabled(false);
+        txtNom.setEnabled(false);
+        txtFecha.setEnabled(false);
+        txtDir.setEnabled(false);
+        txtCor.setEnabled(false);
+        txtCod.setEnabled(false);
+        txtCel.setEnabled(false);
+        CmbProvincia.setEnabled(false);
+        CmbSex.setEnabled(false);
+        btnSave.setEnabled(false);
+        
+        
     }
     public Form_Clientes(int j ) {
         initComponents();
@@ -119,12 +134,20 @@ public class Form_Clientes extends javax.swing.JFrame {
         jLabel3.setText("C.I.");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
+        txtCi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCiActionPerformed(evt);
+            }
+        });
         txtCi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCiKeyTyped(evt);
+            }
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCiKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCiKeyTyped(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCiKeyReleased(evt);
             }
         });
         getContentPane().add(txtCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 87, 122, -1));
@@ -133,6 +156,11 @@ public class Form_Clientes extends javax.swing.JFrame {
         jLabel4.setText("Nombres");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 121, -1, -1));
 
+        txtNom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomActionPerformed(evt);
+            }
+        });
         txtNom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNomKeyTyped(evt);
@@ -143,6 +171,17 @@ public class Form_Clientes extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel5.setText("Apellidos");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 152, -1, -1));
+
+        txtApe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApeActionPerformed(evt);
+            }
+        });
+        txtApe.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApeKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 149, 320, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -180,12 +219,28 @@ public class Form_Clientes extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel1.setText("Direccion");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 183, -1, -1));
+
+        txtDir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDirActionPerformed(evt);
+            }
+        });
+        txtDir.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDirKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 180, 320, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel6.setText("Telefono");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
 
+        txtCel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCelActionPerformed(evt);
+            }
+        });
         txtCel.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCelKeyTyped(evt);
@@ -201,12 +256,23 @@ public class Form_Clientes extends javax.swing.JFrame {
         jLabel7.setText("Fecha de Registro");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 150, 20));
 
+        txtTel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelActionPerformed(evt);
+            }
+        });
         txtTel.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelKeyTyped(evt);
             }
         });
         getContentPane().add(txtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 110, -1));
+
+        txtCor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtCor, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 211, 320, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -241,6 +307,11 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 260, -1));
 
         CmbSex.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "....", "M", "F" }));
+        CmbSex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CmbSexActionPerformed(evt);
+            }
+        });
         getContentPane().add(CmbSex, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 242, 52, -1));
 
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/save me.png"))); // NOI18N
@@ -310,7 +381,10 @@ public class Form_Clientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
-        // TODO add your handling code here:
+txtFecha.setEnabled(false);
+        btnSave.setEnabled(true);
+        btnSave.requestFocus();                
+// TODO add your handling code here:
     }//GEN-LAST:event_txtFechaActionPerformed
 
     private void txtCiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiKeyPressed
@@ -319,7 +393,7 @@ public class Form_Clientes extends javax.swing.JFrame {
 
     private void txtCiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiKeyTyped
     char c = evt.getKeyChar();
- int numerocaracteres = 10;
+ int numerocaracteres = 13;
  if((c<'0'||c>'9'))
         {          
 
@@ -332,7 +406,7 @@ public class Form_Clientes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCiKeyTyped
 
     private void txtCelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelKeyTyped
-          char c = evt.getKeyChar();
+char c = evt.getKeyChar();
  int numerocaracteres = 10;
  if((c<'0'||c>'9'))
         {          
@@ -347,7 +421,7 @@ public class Form_Clientes extends javax.swing.JFrame {
 
     private void txtTelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelKeyTyped
             char c = evt.getKeyChar();
- int numerocaracteres = 7;
+ int numerocaracteres = 10;
  if((c<'0'||c>'9'))
         {          
 
@@ -486,11 +560,113 @@ public class Form_Clientes extends javax.swing.JFrame {
 
     private void txtNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomKeyTyped
 
+            char c=evt.getKeyChar();
+            
+        
+          if(Character.isDigit(c)) {
+              getToolkit().beep();
+              
+              evt.consume();
+   
+          }
     }//GEN-LAST:event_txtNomKeyTyped
 
     private void CmbProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbProvinciaActionPerformed
-        // TODO add your handling code here:
+CmbProvincia.setEnabled(false);
+        txtFecha.setEnabled(true);
+        txtFecha.requestFocus();        
+
+// TODO add your handling code here:
     }//GEN-LAST:event_CmbProvinciaActionPerformed
+
+    private void txtCiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiKeyReleased
+      
+        
+        
+    }//GEN-LAST:event_txtCiKeyReleased
+
+    private void txtCiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCiActionPerformed
+        txtCi.setEnabled(false);
+        
+        txtNom.setEnabled(true);
+        txtNom.requestFocus();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCiActionPerformed
+
+    private void txtNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomActionPerformed
+   txtNom.setEnabled(false);
+   txtNom.setText(txtNom.getText().toUpperCase());
+        txtApe.setEnabled(true);
+        txtApe.requestFocus();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomActionPerformed
+
+    private void txtApeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApeActionPerformed
+ txtApe.setEnabled(false);
+   txtApe.setText(txtApe.getText().toUpperCase());
+        txtDir.setEnabled(true);
+        txtDir.requestFocus();
+    }//GEN-LAST:event_txtApeActionPerformed
+
+    private void txtApeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApeKeyTyped
+ 
+            char c=evt.getKeyChar();
+            
+        
+          if(Character.isDigit(c)) {
+              getToolkit().beep();
+              
+              evt.consume();
+   
+          }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApeKeyTyped
+
+    private void txtDirKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDirKeyTyped
+ 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDirKeyTyped
+
+    private void txtDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDirActionPerformed
+
+ txtDir.setEnabled(false);
+   txtDir.setText(txtDir.getText().toUpperCase());
+        txtCor.setEnabled(true);
+        txtCor.requestFocus();
+    }//GEN-LAST:event_txtDirActionPerformed
+
+    private void txtCorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorActionPerformed
+ 
+txtCor.setEnabled(false);
+        CmbSex.setEnabled(true);
+        CmbSex.requestFocus();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorActionPerformed
+
+    private void CmbSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbSexActionPerformed
+CmbSex.setEnabled(false);
+        txtCel.setEnabled(true);
+        txtCel.requestFocus();
+        
+    }//GEN-LAST:event_CmbSexActionPerformed
+
+    private void txtCelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelActionPerformed
+      txtCel.setEnabled(false);
+        txtTel.setEnabled(true);
+        txtTel.requestFocus();
+        
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_txtCelActionPerformed
+
+    private void txtTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelActionPerformed
+    txtTel.setEnabled(false);
+        CmbProvincia.setEnabled(true);
+        CmbProvincia.requestFocus();
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelActionPerformed
 
     
     public void asignar()

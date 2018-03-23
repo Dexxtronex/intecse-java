@@ -60,7 +60,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Codigo"/>
+        <Property name="text" type="java.lang.String" value="C&#xd3;DIGO"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -88,11 +88,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nombre del Producto"/>
+        <Property name="text" type="java.lang.String" value="NOMBRE DE PRODUCTO:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="100" width="121" height="-1"/>
+          <AbsoluteConstraints x="30" y="100" width="150" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -101,11 +101,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cantidad"/>
+        <Property name="text" type="java.lang.String" value="CANTIDAD:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="140" width="74" height="-1"/>
+          <AbsoluteConstraints x="64" y="140" width="100" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -126,6 +126,7 @@
     <Component class="javax.swing.JTextField" name="txtNom_Pro">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNom_ProActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNom_ProKeyTyped"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -141,11 +142,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Proveedor"/>
+        <Property name="text" type="java.lang.String" value="PROVEEDOR:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="200" width="74" height="30"/>
+          <AbsoluteConstraints x="64" y="200" width="100" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -195,11 +196,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Descripcion del Producto"/>
+        <Property name="text" type="java.lang.String" value="DESCRIPCI&#xd3;N DEL PRODUCTO"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="280" width="156" height="-1"/>
+          <AbsoluteConstraints x="160" y="280" width="220" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -218,7 +219,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Precio Compra"/>
+        <Property name="text" type="java.lang.String" value="PRECIO COMPRA"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -239,38 +240,12 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="300" width="410" height="40"/>
-        </Constraint>
-      </Constraints>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="tare_desc">
-          <Properties>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="5"/>
-          </Properties>
-          <Events>
-            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tare_descKeyPressed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-      </SubComponents>
-    </Container>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Precio Venta"/>
+        <Property name="text" type="java.lang.String" value="PRECIO VENTA"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -296,7 +271,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Hora de Llegada"/>
+        <Property name="text" type="java.lang.String" value="HORA DE LLEGADA"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -309,7 +284,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Dia de llegada"/>
+        <Property name="text" type="java.lang.String" value="D&#xcd;A DE LLEGADA"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -322,7 +297,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Precio Tarjeta Credito"/>
+        <Property name="text" type="java.lang.String" value="PRECIO TARJETA CREDITO"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -335,7 +310,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Precio Por Mayor"/>
+        <Property name="text" type="java.lang.String" value="PRECIO POR MAYOR"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -423,11 +398,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Categoria"/>
+        <Property name="text" type="java.lang.String" value="CATEGORIA:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="240" width="-1" height="-1"/>
+          <AbsoluteConstraints x="65" y="240" width="100" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -607,7 +582,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel25">
       <Properties>
-        <Property name="text" type="java.lang.String" value="hora:minuto:segundo   00:00:00"/>
+        <Property name="text" type="java.lang.String" value="H:M:S      00:00:00"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -617,7 +592,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel26">
       <Properties>
-        <Property name="text" type="java.lang.String" value="dia/mes/a&#xf1;o         00/00/0000"/>
+        <Property name="text" type="java.lang.String" value="D&#xcd;A/MES/A&#xd1;O    00/00/0000"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -644,11 +619,24 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="11" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cantidad Minima"/>
+        <Property name="text" type="java.lang.String" value="CANTIDAD M&#xcd;NIMA:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="180" width="100" height="-1"/>
+          <AbsoluteConstraints x="60" y="185" width="130" height="10"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tare_desc">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tare_descActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="30" y="300" width="410" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -708,7 +696,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/save me.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Guardar"/>
+            <Property name="text" type="java.lang.String" value="GUARDAR"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -733,7 +721,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/recycle-full me.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Eliminar"/>
+            <Property name="text" type="java.lang.String" value="ELIMINAR"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -757,7 +745,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/configuration me.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Modificar"/>
+            <Property name="text" type="java.lang.String" value="MODIFICAR"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -781,7 +769,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/calendar me.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Asignar Tiempo"/>
+            <Property name="text" type="java.lang.String" value="ASIGNAR TIEMPO"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -805,7 +793,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagenes/reload me.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cancelar"/>
+            <Property name="text" type="java.lang.String" value="SALIR"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>

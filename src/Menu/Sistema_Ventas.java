@@ -1056,14 +1056,7 @@ char c = evt.getKeyChar();
  }    }//GEN-LAST:event_txtCantKeyTyped
 
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
-        JFileChooser archivo= new JFileChooser();
-        int ventana=archivo.showOpenDialog(null);
-        if(ventana==JFileChooser.APPROVE_OPTION){
-            File file=archivo.getSelectedFile();
-            jLabel20.setText(String.valueOf(file));
-            Image foto=getToolkit().getImage(jLabel20.getText());
-            jLabel21.setIcon(new ImageIcon(foto));
-        }
+       
     }//GEN-LAST:event_jLabel21MouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
