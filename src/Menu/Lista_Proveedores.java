@@ -143,7 +143,7 @@ public class Lista_Proveedores extends javax.swing.JFrame {
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
 
         btnCan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btnCan.setText("Cancelar");
+        btnCan.setText("SALIR");
         btnCan.setBorderPainted(false);
         btnCan.setContentAreaFilled(false);
         btnCan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -166,7 +166,7 @@ public class Lista_Proveedores extends javax.swing.JFrame {
 
         rdioCod.setBackground(new java.awt.Color(255, 255, 255));
         clasifican.add(rdioCod);
-        rdioCod.setText("Por Codigo");
+        rdioCod.setText("POR CODIGO");
         rdioCod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rdioCodMouseClicked(evt);
@@ -181,7 +181,7 @@ public class Lista_Proveedores extends javax.swing.JFrame {
 
         rdioNom.setBackground(new java.awt.Color(255, 255, 255));
         clasifican.add(rdioNom);
-        rdioNom.setText("Por Nombre");
+        rdioNom.setText("POR NOMBRE");
         rdioNom.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rdioNomMouseClicked(evt);

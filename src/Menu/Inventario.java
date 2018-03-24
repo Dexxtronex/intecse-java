@@ -144,21 +144,21 @@ public Inventario(int j) {
         });
         getContentPane().add(CmbCat, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 173, 20));
 
-        jLabel3.setText("Tipo de Producto: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 509, -1, -1));
+        jLabel3.setText("TIPO DE PRODUCTO:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 509, 190, -1));
         getContentPane().add(lblTip_Pro, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 62, 14));
 
-        jLabel8.setText("Cantidad de Productos:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 509, -1, -1));
+        jLabel8.setText("CANTIDAD DE PRODUCTOS:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 509, 260, -1));
 
-        jLabel10.setText("Filtrar por Categoria: ");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
+        jLabel10.setText("FILTRAR POR CATEGORIA");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 120, 230, -1));
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 510, 67, 14));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/configuration me.png"))); // NOI18N
-        jButton1.setText("Modificar");
+        jButton1.setText("MODIFICAR");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -172,7 +172,7 @@ public Inventario(int j) {
         });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/recycle-full me.png"))); // NOI18N
-        jButton2.setText("Eliminar");
+        jButton2.setText("ELIMINAR");
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -197,7 +197,7 @@ public Inventario(int j) {
         });
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        jButton4.setText("Cancelar");
+        jButton4.setText("CANCELAR");
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -211,7 +211,7 @@ public Inventario(int j) {
         });
 
         jButton5.setBackground(new java.awt.Color(236, 201, 111));
-        jButton5.setText("Actualizar");
+        jButton5.setText("ACTUALIZAR");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -219,7 +219,7 @@ public Inventario(int j) {
         });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/configuration me.png"))); // NOI18N
-        jButton3.setText("Ver");
+        jButton3.setText("VER");
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -238,7 +238,7 @@ public Inventario(int j) {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(4, 4, 4))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

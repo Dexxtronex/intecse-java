@@ -84,7 +84,28 @@ public class Panel {
         }
         return y;
     }
-    
+    public int buscarnombre1(int x)
+    {   int devolver =0;
+        Control y = new Control();
+        cn = co.Conec();
+        String consulta = "select Cedula from clientes WHERE Cedula="+x;
+        try
+        {
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(consulta);
+            if(rs.next())
+            {
+                devolver =1;
+            }
+            
+        }
+        catch(SQLException s)
+        {
+            JOptionPane.showMessageDialog(null,s);
+            System.out.println(s.getMessage());
+        }
+        return devolver;
+    }
     public void modificar(int cedula)
     {
         boolean respuesta=true;

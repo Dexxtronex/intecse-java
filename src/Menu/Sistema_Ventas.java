@@ -295,7 +295,7 @@ Correo_E n = new Correo_E();
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Personales"));
 
-        jLabel2.setText("C.I.");
+        jLabel2.setText("C.I./RUC:");
 
         txtCi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,7 +308,7 @@ Correo_E n = new Correo_E();
             }
         });
 
-        jLabel3.setText("Nombres");
+        jLabel3.setText("NOMBRES:");
 
         txtNom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -316,17 +316,17 @@ Correo_E n = new Correo_E();
             }
         });
 
-        jLabel4.setText("Apellidos");
+        jLabel4.setText("APELLIDOS:");
 
-        jLabel5.setText("Direccion");
+        jLabel5.setText("DIRECCION:");
 
-        jLabel6.setText("Telefono");
+        jLabel6.setText("TELEFONO:");
 
-        jLabel7.setText("Correo");
+        jLabel7.setText("CORREO:");
 
-        jLabel8.setText("Sexo");
+        jLabel8.setText("SEXO:");
 
-        jLabel9.setText("Celular");
+        jLabel9.setText("CELULAR:");
 
         txtCel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,7 +334,7 @@ Correo_E n = new Correo_E();
             }
         });
 
-        jLabel10.setText("Codigo");
+        jLabel10.setText("CODIGO:");
 
         txtCod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,7 +368,7 @@ Correo_E n = new Correo_E();
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -411,7 +411,7 @@ Correo_E n = new Correo_E();
                         .addComponent(jLabel18)
                         .addGap(18, 18, 18)
                         .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -457,7 +457,7 @@ Correo_E n = new Correo_E();
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 990, 210));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 1020, 210));
 
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -474,7 +474,7 @@ Correo_E n = new Correo_E();
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Seleccion de Producto"));
 
-        jLabel11.setText("Producto");
+        jLabel11.setText("PRODUCTO:");
 
         CmbPro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Escoja Producto" }));
         CmbPro.addItemListener(new java.awt.event.ItemListener() {
@@ -544,7 +544,7 @@ Correo_E n = new Correo_E();
             }
         });
 
-        jLabel12.setText("Cantidad");
+        jLabel12.setText("CANTIDAD:");
 
         txtCant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -564,7 +564,7 @@ Correo_E n = new Correo_E();
             }
         });
 
-        jLabel16.setText("Stock");
+        jLabel16.setText("STOCK:");
 
         txtStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -577,8 +577,7 @@ Correo_E n = new Correo_E();
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(CmbPro, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -593,7 +592,7 @@ Correo_E n = new Correo_E();
                 .addComponent(btnAdd)
                 .addGap(18, 18, 18)
                 .addComponent(CmbPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -616,7 +615,7 @@ Correo_E n = new Correo_E();
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/factura.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 130, 80));
 
-        jButton2.setText("Cancelar Venta");
+        jButton2.setText("CANCELAR VENTA");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -624,15 +623,15 @@ Correo_E n = new Correo_E();
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
 
-        jButton3.setText("Facturas");
+        jButton3.setText("VER FACTURAS");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 90, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 140, -1));
 
-        btnVenta.setText("Realizar Venta");
+        btnVenta.setText("REALIZAR VENTA");
         btnVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVentaActionPerformed(evt);
@@ -640,7 +639,7 @@ Correo_E n = new Correo_E();
         });
         getContentPane().add(btnVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 620, -1, -1));
 
-        jLabel13.setText("Subtotal       $");
+        jLabel13.setText("SUBTOTAL");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 600, -1, -1));
         getContentPane().add(txtSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 600, 170, -1));
 
@@ -648,7 +647,7 @@ Correo_E n = new Correo_E();
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 620, -1, -1));
         getContentPane().add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 620, 170, -1));
 
-        jLabel15.setText("Total            $");
+        jLabel15.setText("TOTAL:");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 640, 90, -1));
 
         txtTot.addActionListener(new java.awt.event.ActionListener() {
@@ -666,7 +665,7 @@ Correo_E n = new Correo_E();
                 jLabel21MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 140, 150, 130));
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 140, 150, 130));
 
         correo.setEditable(false);
         correo.addActionListener(new java.awt.event.ActionListener() {
@@ -692,7 +691,7 @@ Correo_E n = new Correo_E();
         });
         getContentPane().add(ape, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 130, -1));
 
-        jButton1.setText("Salir");
+        jButton1.setText("SALIR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -733,7 +732,7 @@ Correo_E n = new Correo_E();
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 330, -1));
 
-        btnEliminar_Articulo.setText("Eliminar Articulo");
+        btnEliminar_Articulo.setText("ELIMINAR ARTICULO");
         btnEliminar_Articulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminar_ArticuloActionPerformed(evt);

@@ -174,7 +174,7 @@ public class Lista_Empleados extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 540, 46));
 
         btnBus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/search me.png"))); // NOI18N
-        btnBus.setText("Buscar");
+        btnBus.setText("BUSCAR");
         btnBus.setBorderPainted(false);
         btnBus.setContentAreaFilled(false);
         btnBus.setFocusPainted(false);
@@ -191,7 +191,7 @@ public class Lista_Empleados extends javax.swing.JFrame {
         getContentPane().add(btnBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 90, 88, -1));
 
         btnCan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btnCan.setText("Cancelar");
+        btnCan.setText("SALIR");
         btnCan.setBorderPainted(false);
         btnCan.setContentAreaFilled(false);
         btnCan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -239,7 +239,7 @@ public class Lista_Empleados extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 160, 120));
 
         btnActu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btnActu.setText("Actualizar");
+        btnActu.setText("ACTUALIZAR");
         btnActu.setBorderPainted(false);
         btnActu.setContentAreaFilled(false);
         btnActu.setDefaultCapable(false);
@@ -257,7 +257,7 @@ public class Lista_Empleados extends javax.swing.JFrame {
         getContentPane().add(btnActu, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/configuration me.png"))); // NOI18N
-        jButton1.setText("Modificar");
+        jButton1.setText("MODIFICAR");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setDefaultCapable(false);
@@ -271,7 +271,7 @@ public class Lista_Empleados extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/recycle-full me.png"))); // NOI18N
-        jButton2.setText("Eliminar");
+        jButton2.setText("ELIMINAR");
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

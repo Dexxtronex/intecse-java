@@ -118,7 +118,7 @@ public class Form_Pedidos extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Apply medi.png"))); // NOI18N
-        btnAceptar.setText("Aceptar");
+        btnAceptar.setText("ACEPTAR");
         btnAceptar.setBorderPainted(false);
         btnAceptar.setContentAreaFilled(false);
         btnAceptar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -171,7 +171,7 @@ public class Form_Pedidos extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 373, -1));
 
         btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btnCancel.setText("Cancelar");
+        btnCancel.setText("SALIR");
         btnCancel.setBorderPainted(false);
         btnCancel.setContentAreaFilled(false);
         btnCancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -183,20 +183,20 @@ public class Form_Pedidos extends javax.swing.JFrame {
                 btnCancelActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 130, -1));
+        getContentPane().add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 130, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel8.setText("Cantidad");
+        jLabel8.setText("CANTIDAD:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
         getContentPane().add(txtCan, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 270, -1));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel1.setText("Nombre de Pedido");
+        jLabel1.setText("NOMBRE DE PEDIDO:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 140, -1));
         getContentPane().add(txtPed, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 270, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel4.setText("Descripcion");
+        jLabel4.setText("DESCRIPCIÓN:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         txtDes.setColumns(20);
@@ -206,16 +206,16 @@ public class Form_Pedidos extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 270, 70));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel5.setText("Fecha de Pedido");
+        jLabel5.setText("FECHA DE PEDIDO:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel6.setText("Fecha de Entrega");
+        jLabel6.setText("FECHA DE ENTREGA:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
         getContentPane().add(txtFe_Pe, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 270, -1));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel7.setText("Proveedor");
+        jLabel7.setText("PROVEEDOR");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         CmbProv.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "......" }));

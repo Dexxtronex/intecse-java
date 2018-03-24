@@ -34,7 +34,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class Lista_Clientes extends javax.swing.JFrame {
       TableRowSorter trs;
       DefaultTableModel modelo;
-    Form_Clientes forc  = new Form_Clientes();
+    Form_Clientes forc  = new Form_Clientes(1,1);
         private final String ruta = System.getProperties().getProperty("user.dir");
     public Lista_Clientes() {
         initComponents();
@@ -79,7 +79,8 @@ public class Lista_Clientes extends javax.swing.JFrame {
         forc.txtTel.setText(tabla.getValueAt(fila, 8).toString());
         forc.txtFecha.setText(tabla.getValueAt(fila,9).toString());
         forc.CmbProvincia.setSelectedItem(tabla.getValueAt(fila,10).toString());
-
+        forc.CmbProvincia.setEnabled(true);
+        forc.CmbSex.setEnabled(true);
         ModDeshabilito();
         forc.setVisible(true);
         }
@@ -264,8 +265,8 @@ public class Lista_Clientes extends javax.swing.JFrame {
         jLabel1.setText("LISTA DE CLIENTES");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 570, 53));
 
-        jLabel3.setText("FIltrar por:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
+        jLabel3.setText("FILTRAR POR:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
         txtFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -290,7 +291,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
         });
         getContentPane().add(CmbFIltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, -1, -1));
 
-        jLabel4.setText("FIltrar");
+        jLabel4.setText("FILTRAR:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
 
         CmbProvincia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "……...", "Azuay", "Bolivar", "Cañar", "Carchi", "Chimborazo", "Cotopaxi", "El Oro", "Esmeraldas", "Galápagos", "Guayas", "Imbabura", "Loja", "Los Rios", "Manabí", "Morona Santiago", "Napo", "Orellana", "Pastaza", "Pichincha", "Santa Elena", "Santo Domingo de los Tsáchilas", "Sucumbíos", "Tungurahua", "Zamora Chinchipe" }));
@@ -302,7 +303,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
         getContentPane().add(CmbProvincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 260, -1));
 
         lblPro.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        lblPro.setText("Provincia");
+        lblPro.setText("PROVINCIA:");
         getContentPane().add(lblPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 150, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -310,7 +311,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
 
         btnActu.setBackground(new java.awt.Color(255, 255, 255));
         btnActu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btnActu.setText("Actualizar");
+        btnActu.setText("ACTUALIZAR");
         btnActu.setBorderPainted(false);
         btnActu.setContentAreaFilled(false);
         btnActu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -324,7 +325,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
         });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/configuration me.png"))); // NOI18N
-        jButton1.setText("Modificar");
+        jButton1.setText("MODIFICAR");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -341,7 +342,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
         });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/recycle-full me.png"))); // NOI18N
-        jButton2.setText("Eliminar");
+        jButton2.setText("ELIMINAR");
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -355,7 +356,7 @@ public class Lista_Clientes extends javax.swing.JFrame {
         });
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        jButton4.setText("Cancelar");
+        jButton4.setText("SALIR");
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

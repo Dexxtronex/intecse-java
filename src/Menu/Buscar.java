@@ -69,27 +69,27 @@ public class Buscar extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setText("Apellidos");
+        jLabel3.setText("APELLIDOS:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 149, 90, 17));
 
-        jLabel4.setText("C.I.");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 87, 90, 16));
+        jLabel4.setText("C.I. / RUC");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 16));
 
-        jLabel5.setText("Fecha de Nacimiento");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 177, -1, 20));
+        jLabel5.setText("FECHA NACIMIENTO");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, 20));
 
-        jLabel6.setText("Sexo");
+        jLabel6.setText("SEXO:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 208, 90, 19));
 
-        jLabel7.setText("Correo");
+        jLabel7.setText("CORREO:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 239, 90, 21));
 
-        jLabel8.setText("Telefono");
+        jLabel8.setText("TELF:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 274, 57, 17));
 
-        jLabel9.setText("Celular");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 50, 20));
-        getContentPane().add(txtape, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 146, 220, -1));
+        jLabel9.setText("CEL:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 50, 20));
+        getContentPane().add(txtape, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 220, -1));
 
         txtci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,37 +101,37 @@ public class Buscar extends javax.swing.JFrame {
                 txtciKeyTyped(evt);
             }
         });
-        getContentPane().add(txtci, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 84, 220, -1));
-        getContentPane().add(txtfn, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 177, 210, -1));
-        getContentPane().add(txtsex, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 208, 220, -1));
-        getContentPane().add(txtcor, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 240, 220, -1));
+        getContentPane().add(txtci, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 220, -1));
+        getContentPane().add(txtfn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 200, -1));
+        getContentPane().add(txtsex, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 220, -1));
+        getContentPane().add(txtcor, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 220, -1));
 
         txtcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcelActionPerformed(evt);
             }
         });
-        getContentPane().add(txtcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 271, 120, 23));
-        getContentPane().add(txttel, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 272, 100, -1));
+        getContentPane().add(txtcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 120, 23));
+        getContentPane().add(txttel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 120, -1));
 
-        jLabel10.setText("Direccion");
+        jLabel10.setText("DIRECCION:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 308, 99, -1));
-        getContentPane().add(txtdir, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 305, 220, -1));
+        getContentPane().add(txtdir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 220, -1));
 
-        jLabel11.setText("Usuario");
+        jLabel11.setText("USUARIO:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 339, 90, -1));
-        getContentPane().add(txtusu, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 336, 220, -1));
+        getContentPane().add(txtusu, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 220, -1));
 
-        jLabel12.setText("Contraseña");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 90, -1));
+        jLabel12.setText("CONTRASEÑA:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 120, -1));
 
-        jLabel13.setText("Tipo de Usuario");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 401, 90, -1));
-        getContentPane().add(txtcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 367, 220, -1));
-        getContentPane().add(txttip_usu, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 398, 220, -1));
+        jLabel13.setText("TIPO DE USUARIO:");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 401, 130, -1));
+        getContentPane().add(txtcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 220, -1));
+        getContentPane().add(txttip_usu, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 220, -1));
 
         btnbus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/search me.png"))); // NOI18N
-        btnbus.setText("Buscar");
+        btnbus.setText("BUSCAR");
         btnbus.setBorderPainted(false);
         btnbus.setContentAreaFilled(false);
         btnbus.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -146,7 +146,7 @@ public class Buscar extends javax.swing.JFrame {
         getContentPane().add(btnbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 436, -1, -1));
 
         btncan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btncan.setText("Cancelar");
+        btncan.setText("SALIR");
         btncan.setBorderPainted(false);
         btncan.setContentAreaFilled(false);
         btncan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -165,7 +165,7 @@ public class Buscar extends javax.swing.JFrame {
         jLabel14.setText("BUSCAR USUARIO");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 250, 45));
 
-        jLabel2.setText("Nombres");
+        jLabel2.setText("NOMBRES:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 118, 90, -1));
 
         txtnom.addActionListener(new java.awt.event.ActionListener() {
@@ -173,10 +173,10 @@ public class Buscar extends javax.swing.JFrame {
                 txtnomActionPerformed(evt);
             }
         });
-        getContentPane().add(txtnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 115, 220, -1));
+        getContentPane().add(txtnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 220, -1));
 
         btnMod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/configuration me.png"))); // NOI18N
-        btnMod.setText("Modificar");
+        btnMod.setText("MODIFICAR");
         btnMod.setBorderPainted(false);
         btnMod.setContentAreaFilled(false);
         btnMod.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -191,7 +191,7 @@ public class Buscar extends javax.swing.JFrame {
         getContentPane().add(btnMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 436, -1, -1));
 
         btnEli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/recycle-full me.png"))); // NOI18N
-        btnEli.setText("Eliminar");
+        btnEli.setText("ELIMINAR");
         btnEli.setBorderPainted(false);
         btnEli.setContentAreaFilled(false);
         btnEli.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -203,7 +203,7 @@ public class Buscar extends javax.swing.JFrame {
                 btnEliActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEli, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 436, -1, -1));
+        getContentPane().add(btnEli, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 530));

@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -38,6 +40,20 @@ public class Form_Clientes extends javax.swing.JFrame {
         fondo.setBounds(0,0,uno.getIconWidth(),u­no.getIconHeight());
         Cargar();
     }
+    public Form_Clientes(int j, int o) {
+        initComponents();
+        setLocationRelativeTo(null);
+        Codigo();
+        asignar();
+        deshabilitar();
+        setTitle("Registro De Clientes");
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/pruebass.png")).getImage());
+        ((JPanel)getContentPane()).setOpaque(fal­se);
+        ImageIcon uno=new ImageIcon(this.getClass().getResource("/Imagenes/pruebass.png"));
+        JLabel fondo= new JLabel(); 
+        getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER); 
+        fondo.setBounds(0,0,uno.getIconWidth(),u­no.getIconHeight());
+            }
     public void Cargar(){
         txtApe.setEnabled(false);
         txtTel.setEnabled(false);
@@ -131,7 +147,7 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel3.setText("C.I.");
+        jLabel3.setText("C.I./ RUC:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         txtCi.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +169,7 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(txtCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 87, 122, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel4.setText("Nombres");
+        jLabel4.setText("NOMBRES:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 121, -1, -1));
 
         txtNom.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +185,7 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 118, 320, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel5.setText("Apellidos");
+        jLabel5.setText("APELLIDOS:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 152, -1, -1));
 
         txtApe.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +233,7 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 380, -1));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel1.setText("Direccion");
+        jLabel1.setText("DIRECCIÓN:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 183, -1, -1));
 
         txtDir.addActionListener(new java.awt.event.ActionListener() {
@@ -233,8 +249,8 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(txtDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 180, 320, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel6.setText("Telefono");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
+        jLabel6.setText("TELEFONO:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, -1));
 
         txtCel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,11 +265,11 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(txtCel, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 273, 130, -1));
 
         jLabel12.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel12.setText("Provincia");
+        jLabel12.setText("PROVINCIA:");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 150, -1));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel7.setText("Fecha de Registro");
+        jLabel7.setText("FECHA REGISTRO:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 150, 20));
 
         txtTel.addActionListener(new java.awt.event.ActionListener() {
@@ -276,9 +292,10 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(txtCor, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 211, 320, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel8.setText("Celular");
+        jLabel8.setText("CELULAR:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 276, 80, -1));
 
+        CmbProvincia.setEditable(true);
         CmbProvincia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "……...", "Azuay", "Bolivar", "Cañar", "Carchi", "Chimborazo", "Cotopaxi", "El Oro", "Esmeraldas", "Galápagos", "Guayas", "Imbabura", "Loja", "Los Rios", "Manabí", "Morona Santiago", "Napo", "Orellana", "Pastaza", "Pichincha", "Santa Elena", "Santo Domingo de los Tsáchilas", "Sucumbíos", "Tungurahua", "Zamora Chinchipe" }));
         CmbProvincia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,16 +313,17 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 260, -1));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel9.setText("Correo");
+        jLabel9.setText("CORREO:");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 214, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel10.setText("Sexo");
+        jLabel10.setText("SEXO:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 245, 43, -1));
 
-        jLabel13.setText("dia/mes/año");
+        jLabel13.setText("DÍA/MES/AÑO");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 260, -1));
 
+        CmbSex.setEditable(true);
         CmbSex.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "....", "M", "F" }));
         CmbSex.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -315,7 +333,7 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(CmbSex, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 242, 52, -1));
 
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/save me.png"))); // NOI18N
-        btnSave.setText("Guardar");
+        btnSave.setText("GUARDAR");
         btnSave.setBorderPainted(false);
         btnSave.setContentAreaFilled(false);
         btnSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -330,7 +348,7 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
         btnCan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btnCan.setText("Cancelar");
+        btnCan.setText("SALIR");
         btnCan.setBorderPainted(false);
         btnCan.setContentAreaFilled(false);
         btnCan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -345,7 +363,7 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(btnCan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
 
         btnMod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/configuration me.png"))); // NOI18N
-        btnMod.setText("Modificar");
+        btnMod.setText("MODIFICAR");
         btnMod.setBorderPainted(false);
         btnMod.setContentAreaFilled(false);
         btnMod.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -360,7 +378,7 @@ public class Form_Clientes extends javax.swing.JFrame {
         getContentPane().add(btnMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, -1, -1));
 
         btnEli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/recycle-full me.png"))); // NOI18N
-        btnEli.setText("Eliminar");
+        btnEli.setText("ELIMINAR");
         btnEli.setBorderPainted(false);
         btnEli.setContentAreaFilled(false);
         btnEli.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -572,9 +590,19 @@ char c = evt.getKeyChar();
     }//GEN-LAST:event_txtNomKeyTyped
 
     private void CmbProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbProvinciaActionPerformed
-CmbProvincia.setEnabled(false);
+if((CmbProvincia.getSelectedItem().toString().equals("……...")==false ))
+        {
+        CmbProvincia.setEnabled(false);
         txtFecha.setEnabled(true);
-        txtFecha.requestFocus();        
+        txtFecha.requestFocus();    
+        }
+        else{
+            CmbProvincia.requestFocus();
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO PROVINCIA ESCOJA PROVINCIA");
+        }
+        
+        
+            
 
 // TODO add your handling code here:
     }//GEN-LAST:event_CmbProvinciaActionPerformed
@@ -586,28 +614,79 @@ CmbProvincia.setEnabled(false);
     }//GEN-LAST:event_txtCiKeyReleased
 
     private void txtCiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCiActionPerformed
-        txtCi.setEnabled(false);
+     
+        int resultado =0;
+        int repetida=0;
+        Panel y = new Panel();
+      repetida =   y.buscarnombre1(Integer.parseInt(txtCi.getText()));
+      if(repetida ==1){
+          JOptionPane.showMessageDialog(rootPane,"ERROR, CEDULA/RUC EXISTENTE");
+           txtCi.requestFocus();
+      }
+      else{
+          if((txtCi.equals(""))||(txtCi.getText().length()==10)||(txtCi.getText().length()==13))
+        {
+            
+            
+             txtCi.setEnabled(false);
         
         txtNom.setEnabled(true);
         txtNom.requestFocus();
+        }
+        else{
+             txtCi.requestFocus();
+             if((txtCi.getText().length()<10))
+             resultado = 1;
+             if((txtCi.getText().length()>10)&&(txtCi.getText().length()<13))
+             resultado = 2;
+            
+             
+             
+             if(resultado ==0)
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO VACIO DE CI/RUC");
+             if(resultado ==1)
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO INSUFICIENTE DE CI/RUC");
+             if(resultado ==2)
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO INSUFICIENTE PARA RUC");
+        }
+      }
+        
 
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCiActionPerformed
 
     private void txtNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomActionPerformed
-   txtNom.setEnabled(false);
-   txtNom.setText(txtNom.getText().toUpperCase());
+        if((txtNom.getText().length()>3 ))
+        {
+              txtNom.setEnabled(false);
+         txtNom.setText(txtNom.getText().toUpperCase());
         txtApe.setEnabled(true);
         txtApe.requestFocus();
+        }
+        else{
+            txtNom.requestFocus();
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO   NOMBRE");
+        }
+        
+       
 
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomActionPerformed
 
     private void txtApeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApeActionPerformed
- txtApe.setEnabled(false);
+ if((txtApe.getText().length()>3 ))
+        {
+                txtApe.setEnabled(false);
    txtApe.setText(txtApe.getText().toUpperCase());
         txtDir.setEnabled(true);
         txtDir.requestFocus();
+        }
+        else{
+            txtApe.requestFocus();
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO APELLIDO");
+        }
+        
+      
     }//GEN-LAST:event_txtApeActionPerformed
 
     private void txtApeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApeKeyTyped
@@ -629,41 +708,94 @@ CmbProvincia.setEnabled(false);
     }//GEN-LAST:event_txtDirKeyTyped
 
     private void txtDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDirActionPerformed
-
+ if((txtDir.getText().length()>3 ))
+        {
+              
  txtDir.setEnabled(false);
    txtDir.setText(txtDir.getText().toUpperCase());
         txtCor.setEnabled(true);
         txtCor.requestFocus();
+        }
+        else{
+            txtDir.requestFocus();
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO DIRECCION");
+        }
     }//GEN-LAST:event_txtDirActionPerformed
 
     private void txtCorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorActionPerformed
+ Pattern pattern = Pattern
+                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
  
-txtCor.setEnabled(false);
+        // El email a validar
+        String email = txtCor.getText();
+ 
+        Matcher mather = pattern.matcher(email);
+ 
+       
+        
+        
+        
+        if((txtCor.getText().length()>3 && mather.find()==true))
+        {
+  txtCor.setEnabled(false);
         CmbSex.setEnabled(true);
         CmbSex.requestFocus();
+        }
+        else{
+            txtCor.requestFocus();
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO CORREO INGRESE UN CORREO ELECTRONICO VALIDO");
+        }
+
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorActionPerformed
 
     private void CmbSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbSexActionPerformed
-CmbSex.setEnabled(false);
+     if((CmbSex.getSelectedItem().toString().equals("....")==false ))
+        {
+         CmbSex.setEnabled(false);
         txtCel.setEnabled(true);
         txtCel.requestFocus();
+        }
+        else{
+            CmbSex.requestFocus();
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO DIRECCION ESCOJA SEXO");
+        }
+      
         
     }//GEN-LAST:event_CmbSexActionPerformed
 
     private void txtCelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelActionPerformed
-      txtCel.setEnabled(false);
+      if((txtCel.getText().length()==10 ))
+        {
+         txtCel.setEnabled(false);
         txtTel.setEnabled(true);
         txtTel.requestFocus();
         
+        }
+        else{
+            txtCel.requestFocus();
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO CELULAR");
+        }
+        
+      
         
 // TODO add your handling code here:
     }//GEN-LAST:event_txtCelActionPerformed
 
     private void txtTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelActionPerformed
-    txtTel.setEnabled(false);
+ if((txtTel.getText().length()>3 ))
+        {
+        txtTel.setEnabled(false);
         CmbProvincia.setEnabled(true);
         CmbProvincia.requestFocus();
+        }
+        else{
+            txtTel.requestFocus();
+             JOptionPane.showMessageDialog(rootPane,"ERROR, CAMPO TELEFONO");
+        }
+        
+       
         
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelActionPerformed

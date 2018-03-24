@@ -120,23 +120,23 @@ public class ClientesFrame extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 467, 272));
 
-        jLabel3.setText("FIltrar");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
+        jLabel3.setText("FILTRAR:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
         txtFiltro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtFiltroKeyTyped(evt);
             }
         });
-        getContentPane().add(txtFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 330, -1));
+        getContentPane().add(txtFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 47, 330, 40));
 
         jLabel2.setFont(new java.awt.Font("Iskoola Pota", 0, 48)); // NOI18N
-        jLabel2.setText("Clientes ");
+        jLabel2.setText("CLIENTES ");
         jLabel2.setToolTipText("");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 190, 50));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 280, 50));
 
         btnSelec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ID me.png"))); // NOI18N
-        btnSelec.setText("Seleccionar");
+        btnSelec.setText("SELECCIONAR");
         btnSelec.setBorderPainted(false);
         btnSelec.setContentAreaFilled(false);
         btnSelec.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -156,7 +156,7 @@ public class ClientesFrame extends javax.swing.JFrame {
         getContentPane().add(btnSelec, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
         btnCan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btnCan.setText("Cancelar");
+        btnCan.setText("SALIR");
         btnCan.setBorderPainted(false);
         btnCan.setContentAreaFilled(false);
         btnCan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

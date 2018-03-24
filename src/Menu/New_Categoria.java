@@ -172,8 +172,8 @@ public class New_Categoria extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 300, 40));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel2.setText("Nombre de la Categoria:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 86, 145, 24));
+        jLabel2.setText("NOMBRE DE LA CATEGORIA:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 86, 180, 24));
 
         txtnom_cat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +183,7 @@ public class New_Categoria extends javax.swing.JFrame {
         getContentPane().add(txtnom_cat, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 88, 152, -1));
 
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/save me.png"))); // NOI18N
-        btnSave.setText("Guardar");
+        btnSave.setText("GUARDAR");
         btnSave.setBorderPainted(false);
         btnSave.setContentAreaFilled(false);
         btnSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -198,7 +198,7 @@ public class New_Categoria extends javax.swing.JFrame {
         getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
 
         btnCan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        btnCan.setText("Cancelar");
+        btnCan.setText("SALIR");
         btnCan.setBorderPainted(false);
         btnCan.setContentAreaFilled(false);
         btnCan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -230,7 +230,7 @@ public class New_Categoria extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Tabla);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/recycle-full me.png"))); // NOI18N
-        jButton2.setText("Eliminar");
+        jButton2.setText("ELIMINAR");
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

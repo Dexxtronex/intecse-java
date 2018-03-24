@@ -172,7 +172,7 @@ public class Facturas extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 130, 80));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ID me.png"))); // NOI18N
-        jButton1.setText("Ver Comprobante");
+        jButton1.setText("VER COMPROBANTE");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -187,7 +187,7 @@ public class Facturas extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, -1, 59));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        jButton2.setText("Cancelar");
+        jButton2.setText("SALIR");
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -202,8 +202,8 @@ public class Facturas extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, -1, 59));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel2.setText("Filtrar por Mes");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 86, -1));
+        jLabel2.setText("FILTRAR  POR MES:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 120, 130, -1));
 
         CmbMes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "......", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         CmbMes.addItemListener(new java.awt.event.ItemListener() {
@@ -214,15 +214,15 @@ public class Facturas extends javax.swing.JFrame {
         getContentPane().add(CmbMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 120, 20));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel3.setText("Numero de Ventas: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, 126, -1));
+        jLabel3.setText("NÚMERO DE FACTURA:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 520, 180, -1));
 
         lblnum_ven.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         getContentPane().add(lblnum_ven, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 56, 14));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
-        jLabel5.setText("Total de Ventas:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, 101, -1));
+        jLabel5.setText("TOTAL DE VENTAS:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 520, 150, -1));
 
         lbltot_ven.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         getContentPane().add(lbltot_ven, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 520, 73, 14));

@@ -146,7 +146,7 @@ public class Lista_Pedidos1 extends javax.swing.JFrame implements Printable {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reload me.png"))); // NOI18N
-        jButton2.setText("Cancelar");
+        jButton2.setText("SALIR");
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -160,7 +160,7 @@ public class Lista_Pedidos1 extends javax.swing.JFrame implements Printable {
         });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ID me.png"))); // NOI18N
-        jButton1.setText("Ver Detalle");
+        jButton1.setText("VER DETALLE");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

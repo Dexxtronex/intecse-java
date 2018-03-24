@@ -132,37 +132,48 @@ public void enviarCorreo(){
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel4.setText("C.I");
+        jLabel4.setText("C.I / RUC");
 
-        jLabel5.setText("Nombre");
+        txtCi.setEditable(false);
 
-        jLabel6.setText("Direccion");
+        jLabel5.setText("NOMBRE:");
 
+        txtNom.setEditable(false);
+
+        jLabel6.setText("DIRECCIÓN:");
+
+        txtDir.setEditable(false);
         txtDir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDirActionPerformed(evt);
             }
         });
 
+        txtFecha.setEditable(false);
         txtFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFechaActionPerformed(evt);
             }
         });
 
-        jLabel7.setText("Fecha");
+        jLabel7.setText("FECHA:");
 
-        jLabel8.setText("Hora");
+        jLabel8.setText("HORA: ");
 
-        jLabel9.setText("Telefono");
+        txtHora.setEditable(false);
 
-        jLabel10.setText("Celular");
+        jLabel9.setText("TELEFONO:");
 
+        jLabel10.setText("CELULAR:");
+
+        txtTel.setEditable(false);
         txtTel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelActionPerformed(evt);
             }
         });
+
+        txtCel.setEditable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("FACTURA N°");
@@ -212,17 +223,22 @@ public void enviarCorreo(){
             }
         });
 
-        jLabel11.setText("Subtotal");
+        jLabel11.setText("SUBTOTAL:");
 
         jLabel12.setText("IVA 12%");
 
-        jLabel13.setText("Total");
+        jLabel13.setText("TOTAL:");
 
+        txtSub.setEditable(false);
+
+        txtIva.setEditable(false);
         txtIva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIvaActionPerformed(evt);
             }
         });
+
+        txtTot.setEditable(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -232,12 +248,12 @@ public void enviarCorreo(){
                 .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel8)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(37, 37, 37)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNom)
@@ -262,7 +278,7 @@ public void enviarCorreo(){
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(166, 166, 166))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
