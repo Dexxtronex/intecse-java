@@ -331,6 +331,7 @@ public class New_Mercaderia extends javax.swing.JFrame {
         btnCan = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
 
         jLabel13.setText("jLabel13");
 
@@ -711,6 +712,9 @@ public class New_Mercaderia extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/new_mer.jpg"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 620));
 
+        jLabel28.setText("lbldireccion");
+        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -838,8 +842,8 @@ CmbCat.transferFocus();
         int ventana=archivo.showOpenDialog(null);
         if(ventana==JFileChooser.APPROVE_OPTION){
             File file=archivo.getSelectedFile();
-            jLabel20.setText(String.valueOf(file));
-            Image foto=getToolkit().getImage(jLabel20.getText());
+            jLabel21.setText(String.valueOf(file));
+            Image foto=getToolkit().getImage(jLabel21.getText());
             jLabel14.setIcon(new ImageIcon(foto));
         }
         
@@ -1080,6 +1084,7 @@ cargarPrecioMayor();
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

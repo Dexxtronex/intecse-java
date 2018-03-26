@@ -201,6 +201,12 @@ public class ClientesFrame extends javax.swing.JFrame {
                 Sistema_Comprobante.txtSexo.setText(rs.getString(7));
                 Sistema_Comprobante.txtCel.setText(rs.getString(8));
                 Sistema_Comprobante.txtTel.setText(rs.getString(9));
+                Sistema_Comprobante.txtCi.setEnabled(false);
+                Sistema_Comprobante.BtnCLi.setEnabled(false);
+                Sistema_Comprobante.CmbPrecio.setEnabled(true);
+                Sistema_Comprobante.CmbPrecio.requestFocus();
+
+
                 dispose();
                 
                 
