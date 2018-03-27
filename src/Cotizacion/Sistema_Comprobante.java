@@ -14,7 +14,14 @@ import Jdbc.Conexion_cat;
 import com.sun.awt.AWTUtilities;
 import correo.Controlador;
 import correo.Correo_E;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.geom.Rectangle2D;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import static java.awt.print.Printable.NO_SUCH_PAGE;
+import static java.awt.print.Printable.PAGE_EXISTS;
 import java.io.File;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -27,12 +34,14 @@ import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 
 /**
  *
  * @author anthony
  */
-public class Sistema_Comprobante extends javax.swing.JFrame {
+public class Sistema_Comprobante extends javax.swing.JFrame  implements Printable{
  private final String ruta = System.getProperties().getProperty("user.dir");
         public static int stock = 0;
         public static int avender=0;
@@ -202,6 +211,7 @@ Correo_E n = new Correo_E();
     private void initComponents() {
 
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtCi = new javax.swing.JTextField();
@@ -241,11 +251,11 @@ Correo_E n = new Correo_E();
         txtIva = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         txtTot = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
         correo = new javax.swing.JTextField();
         nom = new javax.swing.JTextField();
         ape = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         lblFact = new javax.swing.JLabel();
@@ -262,6 +272,8 @@ Correo_E n = new Correo_E();
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Personales"));
@@ -382,7 +394,7 @@ Correo_E n = new Correo_E();
                         .addComponent(jLabel18)
                         .addGap(18, 18, 18)
                         .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -425,10 +437,10 @@ Correo_E n = new Correo_E();
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel17)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 990, 210));
+        jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 1120, 210));
 
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -440,7 +452,7 @@ Correo_E n = new Correo_E();
         ));
         jScrollPane1.setViewportView(Tabla);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 1210, 190));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 1130, 190));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Seleccion de Producto"));
@@ -507,10 +519,10 @@ Correo_E n = new Correo_E();
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 305, 410, -1));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 305, 410, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/factura.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 130, 80));
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 130, 80));
 
         jButton2.setText("CANCELAR COTIZACION");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -518,7 +530,7 @@ Correo_E n = new Correo_E();
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
+        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
 
         BtnCotizacion.setText("COTIZACION");
         BtnCotizacion.addActionListener(new java.awt.event.ActionListener() {
@@ -526,7 +538,7 @@ Correo_E n = new Correo_E();
                 BtnCotizacionActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 620, 90, -1));
+        jPanel4.add(BtnCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 590, 90, -1));
 
         BtnRealizarVenta.setText("Realizar Venta");
         BtnRealizarVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -534,35 +546,25 @@ Correo_E n = new Correo_E();
                 BtnRealizarVentaActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnRealizarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 620, -1, -1));
+        jPanel4.add(BtnRealizarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 620, -1, -1));
 
         jLabel13.setText("Subtotal       $");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 600, -1, -1));
-        getContentPane().add(txtSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 600, 160, -1));
+        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 600, -1, -1));
+        jPanel4.add(txtSubtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 600, 80, -1));
 
         jLabel14.setText("IVA 12%      $");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 620, -1, -1));
-        getContentPane().add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 620, 160, -1));
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 620, -1, -1));
+        jPanel4.add(txtIva, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 620, 80, -1));
 
         jLabel15.setText("Total            $");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 640, 90, -1));
+        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 640, 90, -1));
 
         txtTot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTotActionPerformed(evt);
             }
         });
-        getContentPane().add(txtTot, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 640, 160, -1));
-
-        jLabel21.setFocusCycleRoot(true);
-        jLabel21.setFocusTraversalPolicyProvider(true);
-        jLabel21.setOpaque(true);
-        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel21MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 140, 150, 130));
+        jPanel4.add(txtTot, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 640, 80, -1));
 
         correo.setEditable(false);
         correo.addActionListener(new java.awt.event.ActionListener() {
@@ -570,7 +572,7 @@ Correo_E n = new Correo_E();
                 correoActionPerformed(evt);
             }
         });
-        getContentPane().add(correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 130, -1));
+        jPanel4.add(correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 60, 130, -1));
 
         nom.setEditable(false);
         nom.addActionListener(new java.awt.event.ActionListener() {
@@ -578,7 +580,7 @@ Correo_E n = new Correo_E();
                 nomActionPerformed(evt);
             }
         });
-        getContentPane().add(nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 130, -1));
+        jPanel4.add(nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 60, 130, -1));
 
         ape.setEditable(false);
         ape.addActionListener(new java.awt.event.ActionListener() {
@@ -586,7 +588,7 @@ Correo_E n = new Correo_E();
                 apeActionPerformed(evt);
             }
         });
-        getContentPane().add(ape, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, 130, -1));
+        jPanel4.add(ape, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 60, 130, -1));
 
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -594,7 +596,22 @@ Correo_E n = new Correo_E();
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, 90, -1));
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, 90, -1));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/print me.png"))); // NOI18N
+        jButton3.setText("Imprimir");
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/print grande.png"))); // NOI18N
+        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/print grande.png"))); // NOI18N
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 620, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(238, 210, 127));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -627,7 +644,7 @@ Correo_E n = new Correo_E();
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, 450, -1));
+        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, 450, -1));
 
         btnEliminar_Articulo.setText("Eliminar Articulo");
         btnEliminar_Articulo.addActionListener(new java.awt.event.ActionListener() {
@@ -635,10 +652,10 @@ Correo_E n = new Correo_E();
                 btnEliminar_ArticuloActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminar_Articulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 620, 140, -1));
+        jPanel4.add(btnEliminar_Articulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 620, 140, -1));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sistemafondo.jpg"))); // NOI18N
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 700));
+        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 700));
 
         jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -646,13 +663,15 @@ Correo_E n = new Correo_E();
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 320, -1, -1));
+        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 320, -1, -1));
 
         lblProducto.setText("----");
-        getContentPane().add(lblProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 50, -1, -1));
+        jPanel4.add(lblProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 50, -1, -1));
 
         lblCantidad.setText("----");
-        getContentPane().add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 50, -1, -1));
+        jPanel4.add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 50, -1, -1));
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -796,17 +815,6 @@ Correo_E n = new Correo_E();
         n.setVisible(true);
     }//GEN-LAST:event_BtnCotizacionActionPerformed
 
-    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
-     /*   JFileChooser archivo= new JFileChooser();
-        int ventana=archivo.showOpenDialog(null);
-        if(ventana==JFileChooser.APPROVE_OPTION){
-            File file=archivo.getSelectedFile();
-            jLabel20.setText(String.valueOf(file));
-            Image foto=getToolkit().getImage(jLabel20.getText());
-            jLabel21.setIcon(new ImageIcon(foto));
-        }*/
-    }//GEN-LAST:event_jLabel21MouseClicked
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -876,6 +884,24 @@ Inventario ob = new Inventario();
 ob.setVisible(true);
 
     }//GEN-LAST:event_BttnProductoActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+try
+            {
+                PrinterJob ob  = PrinterJob.getPrinterJob();
+                ob.setPrintable(this);
+                boolean top = ob.printDialog();
+                if(top ){
+               ob.print();
+              
+                }
+            }
+            catch(PrinterException ex)
+            {
+JOptionPane.showMessageDialog(null,"Error en imprimir","error"+ex, JOptionPane.INFORMATION_MESSAGE);
+            }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     
 
@@ -1043,6 +1069,21 @@ public int Ultimo_Num1() {
             }
         });
     }
+    public int print(Graphics graphics, PageFormat pageFormat, int index) throws PrinterException 
+ {
+        if (index > 0)
+        {
+            
+            return NO_SUCH_PAGE;
+        }
+        Graphics2D hub =    (Graphics2D) graphics;
+        hub.translate(pageFormat.getImageableX()+50, pageFormat.getImageableY());
+        
+     
+        hub.scale(0.45, 0.65);
+   jPanel4.printAll(graphics);
+        return PAGE_EXISTS;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton BtnCLi;
@@ -1056,6 +1097,7 @@ public int Ultimo_Num1() {
     private javax.swing.JTextField correo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -1066,7 +1108,6 @@ public int Ultimo_Num1() {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1077,6 +1118,7 @@ public int Ultimo_Num1() {
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
